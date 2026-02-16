@@ -1,0 +1,80 @@
+{
+  "pipeline": "B",
+  "target_col": "injury_risk_score",
+  "split_strategy": "global_date",
+  "use_target_lags": true,
+  "with_lag": {
+    "models": [
+      {
+        "Model": "Ridge",
+        "R\u00b2_Train": 0.9037706683057043,
+        "R\u00b2_Test": 0.8276973226025204,
+        "Gap": 0.07607334570318391,
+        "MAE_Test": 0.245051513859721,
+        "RMSE_Test": 0.4612988762003865,
+        "sMAPE_Test": 31.446430715522023,
+        "Time(s)": 3.235572338104248
+      },
+      {
+        "Model": "Decision Tree",
+        "R\u00b2_Train": 0.9997290063755128,
+        "R\u00b2_Test": 0.9996224639705527,
+        "Gap": 0.00010654240496010825,
+        "MAE_Test": 0.004631194420236248,
+        "RMSE_Test": 0.021593129314855332,
+        "sMAPE_Test": 2.3083478820243992,
+        "Time(s)": 5.001950263977051
+      },
+      {
+        "Model": "Random Forest",
+        "R\u00b2_Train": 0.9999393576932558,
+        "R\u00b2_Test": 0.9999194275729554,
+        "Gap": 1.9930120300437615e-05,
+        "MAE_Test": 0.000808914104571418,
+        "RMSE_Test": 0.009975383628230486,
+        "sMAPE_Test": 0.46117890395047506,
+        "Time(s)": 256.6711037158966
+      },
+      {
+        "Model": "Gradient Boosting",
+        "R\u00b2_Train": 0.9999887083072081,
+        "R\u00b2_Test": 0.9999841527664926,
+        "Gap": 4.555540715545092e-06,
+        "MAE_Test": 0.0025361102368929946,
+        "RMSE_Test": 0.004423979565106037,
+        "sMAPE_Test": 0.5717864422741253,
+        "Time(s)": 279.19257044792175
+      },
+      {
+        "Model": "XGBoost",
+        "R\u00b2_Train": 0.9993257562053602,
+        "R\u00b2_Test": 0.9975704191744734,
+        "Gap": 0.0017553370308868166,
+        "MAE_Test": 0.017427950390593847,
+        "RMSE_Test": 0.05477748130777042,
+        "sMAPE_Test": 2.3643827618989577,
+        "Time(s)": 3.5224556922912598
+      }
+    ],
+    "best_model": "Gradient Boosting",
+    "r2_test": 0.9999841527664926,
+    "mae_test": 0.0025361102368929946,
+    "gap": 4.555540715545092e-06,
+    "n_features": 35
+  },
+  "without_lag": {
+    "results_r2_test": {
+      "Ridge": 0.8252103359232893,
+      "Random Forest": 0.9999194275730061,
+      "Gradient Boosting": 0.9999834968110453
+    },
+    "best_model": "Gradient Boosting",
+    "r2_test": 0.9999834968110453,
+    "mae_test": 0.002555929165138627,
+    "n_features": 25
+  },
+  "comparison": {
+    "r2_improvement_with_lag": 6.559554472929108e-07,
+    "n_features_removed": 10
+  }
+}
